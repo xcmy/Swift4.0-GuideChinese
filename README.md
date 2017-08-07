@@ -4,4 +4,6 @@
 
 > [StringAndCharacters-字符串和字符](./md/StringAndCharacters.md)
 
+> [CollectionTypes-集合](./md/collectionTypes.md)
+
 > 待续
