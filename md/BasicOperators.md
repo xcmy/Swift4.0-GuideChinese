@@ -1,7 +1,6 @@
 ## Basic Operators 基础运算符
 
 
-<span id = "anchor">锚点</span>
 ### Terminology 术语
 
 - 一元运算符作用于一个目标(例如- a)。前缀操作符(如! b)，后缀运算符(如c !)
@@ -64,7 +63,7 @@ Addition (+) 同样支持String
 "hello, " + "world"  // equals "hello, world"
 
 ```
-[锚点](#anchor)
+
 ####  Remainder Operator 取余
 
 > ==NOTE==
