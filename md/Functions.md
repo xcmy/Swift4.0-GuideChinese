@@ -1,7 +1,7 @@
 ## Functions  方法
 
-- [Defining and Calling Functions](#Defining and Calling Functions)
-- [Function Parameters and Return Values](#Function Parameters and Return Values)
+[22222](#Defining and Calling Functions)
+[hhhhh](#Function Parameters and Return Values)
 
 ### Defining and Calling Functions
 
