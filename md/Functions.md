@@ -1,8 +1,8 @@
 ## Functions  方法
 
-- [22222](#我们的祖国)
+- [22222](#我们的祖国-define)
 
-- [hhhhh](#functionparametersandreturnvalues)
+- [hhhhh](#function-parameters-and-return-values)
 
 - [function](#function)
 
