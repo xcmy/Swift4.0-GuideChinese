@@ -1,8 +1,8 @@
 ## Functions  方法
 
-[22222](#defining and calling functions)
+- [22222](#definingandcallingfunctions)
 
-[hhhhh](#function parameters and return values)
+- [hhhhh](#functionparametersandreturnvalues)
 
 - [function](#function)
 
