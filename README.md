@@ -25,4 +25,6 @@
 
 > [ControlFlow-控制流](./md/ControlFlow.md)
 
+>[Functions-方法](./md/Functions.md)
+
 > 未完待续
