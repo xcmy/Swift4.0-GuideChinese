@@ -1,6 +1,6 @@
 ## Functions  方法
 
-- [22222](#definingandcallingfunctions)
+- [22222](#我们的祖国)
 
 - [hhhhh](#functionparametersandreturnvalues)
 
@@ -61,6 +61,16 @@ The print(_:separator:terminator:) function doesn’t have a label for its first
 
 
 ### Function
+
+string and see its return value, as shown above.
+
+NOTE
+
+The print(_:separator:terminator:) function doesn’t have a label for its first argument, and its other arguments are optional because they have a default value. These variations on function syntax are discussed below in Function Argument Labels and Parameter Names and Default Parameter Values.
+
+
+
+### 我们的祖国 define
 
 string and see its return value, as shown above.
 
