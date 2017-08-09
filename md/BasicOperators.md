@@ -1,7 +1,31 @@
 ## Basic Operators 基础运算符
+---
 
+## 目录
+- [Terminology 术语](#terminology-术语)
+- [Assignment Operator 赋值运算符](#assignment-operator-赋值运算符)
+- [Arithmetic Operators 算数运算符](#arithmetic-operators-算数运算符)
+  - [Remainder Operator 取余](#remainder-operator-取余)
+  - [Unary Minus Operator 取反运算](#unary-minus-operator-取反运算符)
+  - [Unary Plus Operator 取正运算符](#unary-plus-operator-取正运算符)
+- [Compound Assignment Operators  组合运算符](#compound-assignment-operators-组合运算符)
+- [Comparison Operators 比较运算符](#comparison-operators-比较运算符)
+- [Ternary Conditional Operator 条件运算符](#ternary-conditional-operator-条件运算符)
+- [Nil-Coalescing Operator  默认 操作符](#nil-coalescing-operator-默认操作符)
+- [Range Operators 区间运算符](#range-operators-区间运算符)
+  - [Closed Range Operator 闭区间](#closed-range-operator-闭区间)
+  - [Half-Open Range Operator 半开区间](#half-open-range-operator-半开区间)
+  - [One-Sided Ranges 单边区间](#one-sided-ranges-单边区间)
+- [Logical Operators 逻辑运算符](#logical-operators-逻辑运算符)
+  - [Logical NOT Operator 非运算符](#logical-not-operator-非运算符)
+  - [Logical AND Operator 并\且运算符](#logical-and-operator-并且运算符)
+  - [Logical OR Operator 或运算符](#logical-or-operator-或运算符)
+  - [Combining Logical Operators 复合逻辑运算符](#combining-logical-operators-复合逻辑运算符)
+  - [Explicit Parentheses 括号使用](#explicit-parentheses-括号使用)
 
-### Terminology 术语
+---
+
+## Terminology 术语
 
 - 一元运算符作用于一个目标(例如- a)。前缀操作符(如! b)，后缀运算符(如c !)
 - 二元操作符作用于两个目标之间（如：a+b）
@@ -12,7 +36,7 @@
 
 ---
 
-### Assignment Operator 赋值运算符
+## Assignment Operator 赋值运算符
 
 例a = b ，a初始化，更新a的值为b。
     
@@ -38,7 +62,7 @@ if x = y {
 ```
 
 ---
-### Arithmetic Operators 算数运算符
+## Arithmetic Operators 算数运算符
 
 Swift支持所有数字类型的四种基本算术运算符
 
@@ -64,9 +88,9 @@ Addition (+) 同样支持String
 
 ```
 
-####  Remainder Operator 取余
+###  Remainder Operator 取余
 
-> ==NOTE==
+
 > 在其他语言取余操作符(%)也被称为模运算符。然而,在Swift中负数也是可以参与运算的,严格地说,不算是模操作
 
 余数的写法
@@ -87,7 +111,7 @@ Addition (+) 同样支持String
 9 % -4    // equals 1
 ```
 
-#### Unary Minus Operator 取反运算符-
+### Unary Minus Operator 取反运算符
 
 数值前面可以加前缀 -（直接加在数字前面，中间没有空格），表示取反值
 ```
@@ -95,7 +119,7 @@ let three = 3
 let minusThree = -three       // minusThree equals -3
 let plusThree = -minusThree   // plusThree equals 3, or "minus minus three"
 ```
-#### Unary Plus Operator +运算符
+### Unary Plus Operator 取正运算符
 
 没有什么实际意义，写在数字之前，对值没有什么影响
 
@@ -104,8 +128,8 @@ let plusThree = -minusThree   // plusThree equals 3, or "minus minus three"
 let minusSix = -6
 let alsoMinusSix = +minusSix  // alsoMinusSix equals -6
 ```
-
-### Compound Assignment Operators  组合运算符
+---
+## Compound Assignment Operators  组合运算符
 
 像C、Swift都有组合运算符，如（+=），仅仅是运算符，没有返回值（不能写成b = a+=）
 ```
@@ -113,8 +137,8 @@ var a = 1
 a += 2
 // a is now equal to 3
 ```
-
-### Comparison Operators 比较运算符
+---
+## Comparison Operators 比较运算符
 
 Swift支持所有C的标准的比较运算符
 - Equal to (a == b) 等于
@@ -155,9 +179,10 @@ if name == "world" {
 (3, "apple") < (3, "bird")    // true because 3 is equal to 3, and "apple" is less than "bird"
 (4, "dog") == (4, "dog")      // true because 4 is equal to 4, and "dog" is equal to "dog"
 ```
-> ==NOTE==Swift比较运算符只支持元素少于七位的元组进行比较，多于七位只能自己实现比较运算
+> Swift比较运算符只支持元素少于七位的元组进行比较，多于七位只能自己实现比较运算
 
-### Ternary Conditional Operator 条件运算符
+---
+## Ternary Conditional Operator 条件运算符
 条件运算符的格式：question ? answer1 : answer2；如果 question为真返回answer1，为假返回answer2 ，如下：
 
 ```
@@ -190,8 +215,8 @@ let rowHeight = contentHeight + (hasHeader ? 50 : 20)
 ```
 > 三元运算符也可以实现简单的条件判断，代码看起来很简洁，过度使用会增加代码的可读性
 
-
-### Nil-Coalescing Operator  ?? 操作符
+---
+## Nil-Coalescing Operator  默认操作符
 如果a是optional类型，a ?? b表示当a = nil的时候，给a默认一个值b(b的类型必须和a声明的类型一致)。
 
 代码实现原理，解释如下：
@@ -218,10 +243,10 @@ var userDefinedColorName: String?   // defaults to nil
 var colorNameToUse = userDefinedColorName ?? defaultColorName
 // userDefinedColorName is nil, so colorNameToUse is set to the default of "red"
 ```
+---
+## Range Operators 区间运算符
 
-### Range Operators 区间运算符
-
-#### Closed Range Operator 闭区间
+### Closed Range Operator 闭区间
 闭区间（a...b）,表示从a到b的区间范围，也包括a和b,前提条件是（a < b）,常用于数据遍历，例：
 
 ```
@@ -234,7 +259,7 @@ for index in 1...5 {
 // 4 times 5 is 20
 // 5 times 5 is 25
 ```
-#### Half-Open Range Operator 半开区间
+### Half-Open Range Operator 半开区间
 半开区间（a..<b）,表示从a到b,包括a,但不包括b,如果a == b,这就是个空区间。例：
 
 ```
@@ -249,7 +274,7 @@ for i in 0..<count {
 // Person 4 is called Jack
 
 ```
-#### One-Sided Ranges 单边区间
+### One-Sided Ranges 单边区间
 闭区间和半开区间都是一个值到一个值，单边区间指从一个值到末尾或者从开头到某个值。比如：
 
 ```
@@ -285,13 +310,15 @@ range.contains(4)   // true
 range.contains(-1)  // true
 
 ```
-### Logical Operators 逻辑运算符
+
+---
+## Logical Operators 逻辑运算符
 如下三种逻辑运算符
 - Logical NOT (!a)  非
 - Logical AND (a && b)  且\并
 - Logical OR (a || b) 或
 
-#### Logical NOT Operator 非运算符
+### Logical NOT Operator 非运算符
 
 非运算符是一个前缀操作符，中间没有空格，也可以理解为“不是”。
 
@@ -303,7 +330,7 @@ if !allowedEntry {
 // Prints "ACCESS DENIED"
 
 ```
-#### Logical AND Operator 并\且运算符
+### Logical AND Operator 并且运算符
 
 运算符（&&）表示当两个表达式均为true的条件下才为true。（当第一个条件为false的时候，第二个条件是不会判断的）。
 
@@ -318,7 +345,7 @@ if enteredDoorCode && passedRetinaScan {
 // Prints "ACCESS DENIED"
 
 ```
-#### Logical OR Operator 或运算符
+### Logical OR Operator 或运算符
 运算符（||）表示当两个表达式只要有一个为true的条件就为true。
 
 ```
@@ -333,7 +360,7 @@ if hasDoorKey || knowsOverridePassword {
 
 ```
 
-#### Combining Logical Operators 复合逻辑运算符
+### Combining Logical Operators 复合逻辑运算符
 
 如下（只要enteredDoorCode为true并且passedRetinaScan、hasDoorKey、knowsOverridePassword其中一个为true整个表达式就为true）
 ```
@@ -344,7 +371,7 @@ if enteredDoorCode && passedRetinaScan || hasDoorKey || knowsOverridePassword {
 }
 // Prints "Welcome!"
 ```
-#### Explicit Parentheses 括号+逻辑运算符
+### Explicit Parentheses 括号使用
 
 如下，（）里面整体表示一个单独的逻辑，使用括号有助于使逻辑更加清晰。
 
