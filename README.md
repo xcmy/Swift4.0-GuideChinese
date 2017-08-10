@@ -6,7 +6,6 @@
 #### The powerful programming language that is also easy to learn
 
 
-
 #### 官方网站
 
 - [Swift](https://developer.apple.com/swift/)
@@ -26,6 +25,52 @@
 
 > [ControlFlow-控制流](./md/ControlFlow.md)
 
->[Functions-方法](./md/Functions.md)
-
 > 未完待续
+
+> [Functions](./md/Functions.md)
+
+> [Closures](./md/Closures.md)
+
+> [Enumerations](./md/Enumerations.md)
+
+> [Classes and Structures
+](./md/ClassesAndStructures.md)
+
+> [Properties](./md/Properties.md)
+
+> [Methods](./md/Methods.md)
+
+> [Subscripts](./md/Subscripts.md)
+
+> [Inheritance](./md/Inheritance.md)
+
+> [Initialization](./md/Initialization.md)
+
+> [Deinitialization](./md/Deinitialization.md)
+
+> [Automatic Reference Counting
+](./md/AutomaticReferenceCounting.md)
+
+> [Optional Chaining
+](./md/OptionalChaining.md)
+
+> [Error Handling
+](./md/ErrorHandling.md)
+
+> [Type Casting
+](./md/TypeCasting.md)
+
+> [Nested Types
+](./md/NestedTypes.md)
+
+> [Extensions](./md/Extensions.md)
+
+> [Protocols](./md/Protocols.md)
+
+> [Generics](./md/Generics.md)
+
+> [Access Control
+](./md/AccessControl.md)
+
+> [Advanced Operators
+](./md/AdvancedOperators.md)
