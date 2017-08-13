@@ -42,12 +42,12 @@ Swift的字符串是有一系列characters组成的，像 "hello word" or "albat
 ## String Literals  字面量-字符串常量
 字符串常量是由一系列字符组成，被""包裹，如下：
 
-```
+```Swift
 let someString = "Some string literal value"
 ```
 多行字符串由三个引号包裹，如下
 
-```
+```Swift
 let quotation = """
 The White Rabbit put on his spectacles.  "Where shall I begin,
 please your Majesty?" he asked.
@@ -58,7 +58,7 @@ till you come to the end; then stop."
 ```
 如果一个多行字符串中包含三个引号，需要用\隔开，如：
 
-```
+```Swift
 let threeDoubleQuotes = """
 Escaping the first quote \"""
 Escaping all three quotes \"\"\"
@@ -66,7 +66,7 @@ Escaping all three quotes \"\"\"
 ```
 对于单行和多行的字符串定义，下面这两个字符串是相同的
 
-```
+```Swift
 let singleLineString = "These are the same."
 let multilineString = """
 These are the same.
@@ -75,7 +75,7 @@ These are the same.
 
 多行字符串以空行开始和结尾，如下
 
-```
+```Swift
 """
  
 This string starts with a line feed.
@@ -86,7 +86,7 @@ It also ends with a line feed.
 
 多行字符串是以结尾的三个引号对齐的，只要文本和结尾的"""对齐，那就是文本无缩进，如果文本比结尾引号靠后，打印出来也是有缩进的（如果引号比文本靠后，就会报错）。
 
-```
+```Swift
 func generateQuotation() -> String {
     let quotation = """
         The White Rabbit put on his spectacles.  "Where shall I begin,
@@ -105,14 +105,14 @@ print(quotation == generateQuotation())
 
 我们可以通过""或者字符串初始化语法来创建一个空字符串，如：
 
-```
+```Swift
 var emptyString = ""               // empty string literal
 var anotherEmptyString = String()  // initializer syntax
 // these two strings are both empty, and are equivalent to each other
 ```
 可以通过.isEmpty属性来判断是否是空字符串
 
-```
+```Swift
 if emptyString.isEmpty {
     print("Nothing to see here")
 }
@@ -125,7 +125,7 @@ if emptyString.isEmpty {
 
 如果一个字符串是变量那么它是可以修改的，如果是常量，它是不能修改的。如
 
-```
+```Swift
 var variableString = "Horse"
 variableString += " and carriage"
 // variableString is now "Horse and carriage"
@@ -146,7 +146,7 @@ Swift的copy-by-default(👆这种行为)保证了原值不受function和变量�
 ## Working with Characters 字符
 
 使用 for-in loop遍历字符串可以获取String中的每一个独立的字符
-```
+```Swift
 for character in "Dog!🐶" {
     print(character)
 }
@@ -158,12 +158,12 @@ for character in "Dog!🐶" {
 ```
 Character的创建
 
-```
+```Swift
 let exclamationMark: Character = "!"
 ```
 字符串也可以由字符数组（Character[]）来初始化，如下:
 
-```
+```Swift
 let catCharacters: [Character] = ["C", "a", "t", "!", "🐱"]
 let catString = String(catCharacters)
 print(catString)
@@ -175,7 +175,7 @@ print(catString)
 
 String类型可以通过 + 运算符拼接，如下
 
-```
+```Swift
 let string1 = "hello"
 let string2 = " there"
 var welcome = string1 + string2
@@ -183,14 +183,14 @@ var welcome = string1 + string2
 ```
 可变String可以通过 += 运算符拼接,如下
 
-```
+```Swift
 var instruction = "look over"
 instruction += string2
 // instruction now equals "look over there"
 ```
 可以在String后面通过append()方法拼接字符，如下
 
-```
+```Swift
 let exclamationMark: Character = "!"
 welcome.append(exclamationMark)
 // welcome now equals "hello there!"
@@ -201,7 +201,7 @@ welcome.append(exclamationMark)
 ## String Interpolation 字符串内插
 将常数，变量，常量，表达式等值拼接在一起组成一个新的字符串就叫String Interpolation，在字符串中这些值都用\\()包裹起来，如下：
 
-```
+```Swift
 let multiplier = 3
 let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
 // message is "3 times 2.5 is 7.5"
@@ -214,7 +214,7 @@ let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
 Swift的String和Character类型完全符合[Unicode](https://baike.baidu.com/item/Unicode/750500?fr=aladdin)编码规范和标准
 
 
-```
+```Swift
 graph LR
 A[Unicode scalar]-->B[String]
 ```
@@ -257,7 +257,7 @@ C-->|组成|D[String 字符串]
 -  `\u{n}` 形式的字符串（n是十六进制数）都对应一个码点，如下：
 
 
-```
+```Swift
 let wiseWords = "\"Imagination is more important than knowledge\" - Einstein"
 // "Imagination is more important than knowledge" - Einstein
 let dollarSign = "\u{24}"        // $,  Unicode scalar U+0024
@@ -272,7 +272,7 @@ let sparklingHeart = "\u{1F496}" // 💖, Unicode scalar U+1F496
 
 Swift里面的`Character`类型相当于一个*Extended Grapheme Clusters*(扩展字形群集)，而一个扩展字形群集则是由一个或多个Unicode scalar（编码单元）组成人类可以识别的`character`（字符）。
 
-```
+```Swift
 let eAcute: Character = "\u{E9}"                         // é
 let combinedEAcute: Character = "\u{65}\u{301}"          // e followed by ́
 // eAcute is é, combinedEAcute is é
@@ -282,7 +282,7 @@ let combinedEAcute: Character = "\u{65}\u{301}"          // e followed by ́
 
 *Extended grapheme clusters*可以通过单个的字符组成复杂的字符，例如韩语里面 `한` 字，如下：
 
-```
+```Swift
 let precomposed: Character = "\u{D55C}"                  // 한
 let decomposed: Character = "\u{1112}\u{1161}\u{11AB}"   // ᄒ, ᅡ, ᆫ
 // precomposed is 한, decomposed is 한
@@ -290,14 +290,14 @@ let decomposed: Character = "\u{1112}\u{1161}\u{11AB}"   // ᄒ, ᅡ, ᆫ
 
 *Extended grapheme clusters*可以将一个字符用封闭标记（o）包起来，如下`é -> é⃝`, 只需在后面加上  `U+20DD`，如下：
 
-```
+```Swift
 let enclosedEAcute: Character = "\u{E9}\u{20DD}"
 // enclosedEAcute is é⃝
 ```
 
 *regional indicator symbols*（区域表示字母）,如🇦、🇺、🇸等，可以组合在一起形成一个 emoji flags （国旗），比如🇺和🇸可以组成🇺🇸
 
-```
+```Swift
 let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
 let China: Character = "\u{1F1E8}\u{1F1F3}"
 print("----\(regionalIndicatorForUS)-----")
@@ -311,7 +311,7 @@ print("----\(China)-----")
 
 计算字符串长度要使用`.count`属性
 
-```
+```Swift
 let unusualMenagerie = "Koala 🐨, Snail 🐌, Penguin 🐧 ，Dromedary 🐪"
 print("unusualMenagerie has \(unusualMenagerie.count) characters")
 // Prints "unusualMenagerie has 40 characters"
@@ -320,7 +320,7 @@ print("unusualMenagerie has \(unusualMenagerie.count) characters")
 
 *extended grapheme clusters*（扩展字符群集）虽然改变了字符的展示形式，但对于字符串的长度是没有影响的。字符串的长度是计算的Character的个数，如下`e`和`é`都算是一个长度
 
-```
+```Swift
 var word = "cafe"
 print("the number of characters in \(word) is \(word.count)")
 // Prints "the number of characters in cafe is 4"
@@ -353,7 +353,7 @@ print("the number of characters in \(word) is \(word.count)")
 `index(_:offsetBy:)`获取偏移某个某个位置的位置
 
 
-```
+```Swift
 let greeting = "Guten Tag!"
 greeting[greeting.startIndex]
 // G
@@ -369,14 +369,14 @@ greeting[index]
 
 如果获取的位置超出了字符的范围就会报`runtime` 错误
 
-```
+```Swift
 greeting[greeting.endIndex] // Error
 greeting.index(after: greeting.endIndex) // Error
 ```
 
 通过`indices`属性可以获取字符串中每个字符的索引
 
-```
+```Swift
 for index in greeting.indices {
     print("\(greeting[index]) ", terminator: "")
 }
@@ -390,7 +390,7 @@ for index in greeting.indices {
 给字符串插入一个单一的字符（character）用`insert(_:at:) `这个方法。
 给字符串插入另一段字符串用`insert(contentsOf:at:)`方法
 
-```
+```Swift
 var welcome = "hello"
 welcome.insert("!", at: welcome.endIndex)
 // welcome now equals "hello!"
@@ -403,7 +403,7 @@ welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex)
 移除一段字符串用`removeSubrange(_:)` 方法
 
 
-```
+```Swift
 welcome.remove(at: welcome.index(before: welcome.endIndex))
 // welcome now equals "hello there"
  
@@ -419,7 +419,7 @@ welcome.removeSubrange(range)
 
 当你使用类似于`prefix(_:)`这样的方法获取一个字符串的子字符串的时候，得到的结果其实是[Substring](https://developer.apple.com/documentation/swift/substring)的一个实例，不是另一个字符串。但你可以像使用String类型一样使用它（大部分方法和属性都是通用的），但不是持久的，如果想一直使用它，需要重新赋值，分配内存。如下
 
-```
+```Swift
 let greeting = "Hello, world!"
 let index = greeting.index(of: ",") ?? greeting.endIndex
 let beginning = greeting[..<index]
@@ -451,7 +451,7 @@ Swift有三种比较字符串的方法：
 通过 比较运算符（[Comparison Operators](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID70)）来判断字符串是否相等
 
 
-```
+```Swift
 let quotation = "We're a lot alike, you and I."
 let sameQuotation = "We're a lot alike, you and I."
 if quotation == sameQuotation {
@@ -462,7 +462,7 @@ if quotation == sameQuotation {
 
 就算两个字符串的 `Unicode scalars` 不相同，只要字符串的意义和样子是一样的，就是相等的，如下：
 
-```
+```Swift
 // "Voulez-vous un café?" using LATIN SMALL LETTER E WITH ACUTE
 let eAcuteQuestion = "Voulez-vous un caf\u{E9}?"
  
@@ -478,7 +478,7 @@ if eAcuteQuestion == combinedEAcuteQuestion {
 但是，像英语里面的拉丁字母 "A"（`U+0041`）和西里尔字母（`CYRILLIC）的 "А"，虽然外观是一样的，但是语义是不一样的，所以他们两是不相等的。
 
 
-```
+```Swift
 let latinCapitalLetterA: Character = "\u{41}"
  
 let cyrillicCapitalLetterA: Character = "\u{0410}"
@@ -499,7 +499,7 @@ if latinCapitalLetterA != cyrillicCapitalLetterA {
 
 如下一个字符串数组
 
-```
+```Swift
 let romeoAndJuliet = [
     "Act 1 Scene 1: Verona, A public place",
     "Act 1 Scene 2: Capulet's mansion",
@@ -516,7 +516,7 @@ let romeoAndJuliet = [
 ```
 你可以通过`hasPrefix(_:)` 方法计算出以"Act 1"打头的字符串的个数
 
-```
+```Swift
 
 for scene in romeoAndJuliet {
     if scene.hasPrefix("Act 1 ") {
@@ -529,7 +529,7 @@ print("There are \(act1SceneCount) scenes in Act 1")
 
 同样 `hasSuffix(_:)`也有妙用
 
-```
+```Swift
 var mansionCount = 0
 var cellCount = 0
 for scene in romeoAndJuliet {
@@ -559,7 +559,7 @@ Swift里有好几种不同的方法来获取字符串的编码展示。可以通
 - 21-bit Unicode scalar 编码等同于UTF-32编码格式，都通过字符串的`unicodeScalars`属性来获取
 
 
-```
+```Swift
 let dogString = "Dog‼🐶"
 
 ```
@@ -574,7 +574,7 @@ character | D | o | g | !! | 🐶 |
 
 获取String的UTF-8编码单元集合，可以遍历String的`utf8`属性，这个属性的类型是`String.UTF8View`（UInt8值的集合）
 
-```
+```Swift
 for codeUnit in dogString.utf8 {
     print("\(codeUnit) ", terminator: "")
 }
@@ -593,7 +593,7 @@ print("")
 获取String的UTF-16编码单元集合，可以遍历String的`utf16`属性，这个属性的类型是`String.UTF16View`（UInt16值的集合）
 
 
-```
+```Swift
 for codeUnit in dogString.utf16 {
     print("\(codeUnit) ", terminator: "")
 }
@@ -617,7 +617,7 @@ print("")
 每一个UnicodeScalar都有一个`value`属性（21-bit值，相当于UInt32值）
 
 
-```
+```Swift
 for scalar in dogString.unicodeScalars {
     print("\(scalar.value) ", terminator: "")
 }
@@ -637,7 +637,7 @@ print("")
 所以!!和🐶均可以用一个Unicode scalar编码单元来表示
 
 
-```
+```Swift
 for scalar in dogString.unicodeScalars {
     print("\(scalar) ")
 }

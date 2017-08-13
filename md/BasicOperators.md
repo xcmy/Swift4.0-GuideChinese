@@ -40,7 +40,7 @@
 
 例a = b ，a初始化，更新a的值为b。
     
-```
+```Swift
 let b = 10
 var a = 5
 a = b
@@ -49,13 +49,13 @@ a = b
 ```
 如果右侧是一个元组与多个值,它的元素可以分解成多个常量或变量
 
-```
+```Swift
 let (x, y) = (1, 2)
 // x is equal to 1, and y is equal to 2
 ```
 与C和objective - C的赋值运算符不同,赋值运算符本身不返回值。下面的声明是无效的
 
-```
+```Swift
 if x = y {
     // This is not valid, because x = y does not return a value.
 }
@@ -72,7 +72,7 @@ Swift支持所有数字类型的四种基本算术运算符
 - Division (/)  除
 
 
-```
+```Swift
 1 + 2       // equals 3
 5 - 3       // equals 2
 2 * 3       // equals 6
@@ -83,7 +83,7 @@ Swift支持所有数字类型的四种基本算术运算符
 
 Addition (+) 同样支持String
 
-```
+```Swift
 "hello, " + "world"  // equals "hello, world"
 
 ```
@@ -95,26 +95,26 @@ Addition (+) 同样支持String
 
 余数的写法
 
-```
+```Swift
 9 % 4    // equals 1
 ```
 
 负值计算余数
 
-```
+```Swift
 -9 % 4   // equals -1
 ```
 
 如a % b，b的正负是被忽略的，a % b = a % -b
 
-```
+```Swift
 9 % -4    // equals 1
 ```
 
 ### Unary Minus Operator 取反运算符
 
 数值前面可以加前缀 -（直接加在数字前面，中间没有空格），表示取反值
-```
+```Swift
 let three = 3
 let minusThree = -three       // minusThree equals -3
 let plusThree = -minusThree   // plusThree equals 3, or "minus minus three"
@@ -124,7 +124,7 @@ let plusThree = -minusThree   // plusThree equals 3, or "minus minus three"
 没有什么实际意义，写在数字之前，对值没有什么影响
 
 
-```
+```Swift
 let minusSix = -6
 let alsoMinusSix = +minusSix  // alsoMinusSix equals -6
 ```
@@ -132,7 +132,7 @@ let alsoMinusSix = +minusSix  // alsoMinusSix equals -6
 ## Compound Assignment Operators  组合运算符
 
 像C、Swift都有组合运算符，如（+=），仅仅是运算符，没有返回值（不能写成b = a+=）
-```
+```Swift
 var a = 1
 a += 2
 // a is now equal to 3
@@ -152,7 +152,7 @@ Swift支持所有C的标准的比较运算符
 
 
 每个比较运算符都返回一个bool值来判断表达式的正确与否
-```
+```Swift
 1 == 1   // true because 1 is equal to 1
 2 != 1   // true because 2 is not equal to 1
 2 > 1    // true because 2 is greater than 1
@@ -163,7 +163,7 @@ Swift支持所有C的标准的比较运算符
 
 比较运算符经常被使用与条件语句中，如if语句
 
-```
+```Swift
 let name = "world"
 if name == "world" {
     print("hello, world")
@@ -174,7 +174,7 @@ if name == "world" {
 ```
 元组类型一致也是可以比较的（字符串比较同位的字母先后顺序），比如
 
-```
+```Swift
 (1, "zebra") < (2, "apple")   // true because 1 is less than 2; "zebra" and "apple" are not compared
 (3, "apple") < (3, "bird")    // true because 3 is equal to 3, and "apple" is less than "bird"
 (4, "dog") == (4, "dog")      // true because 4 is equal to 4, and "dog" is equal to "dog"
@@ -185,7 +185,7 @@ if name == "world" {
 ## Ternary Conditional Operator 条件运算符
 条件运算符的格式：question ? answer1 : answer2；如果 question为真返回answer1，为假返回answer2 ，如下：
 
-```
+```Swift
 if question {
     answer1
 } else {
@@ -194,7 +194,7 @@ if question {
 ```
 举例
 
-```
+```Swift
 let contentHeight = 40
 let hasHeader = true
 let rowHeight: Int
@@ -207,7 +207,7 @@ if hasHeader {
 ```
 也可以简写为
 
-```
+```Swift
 let contentHeight = 40
 let hasHeader = true
 let rowHeight = contentHeight + (hasHeader ? 50 : 20)
@@ -221,14 +221,14 @@ let rowHeight = contentHeight + (hasHeader ? 50 : 20)
 
 代码实现原理，解释如下：
 
-```
+```Swift
 a != nil ? a! : b
 
 ```
 举例
 
 如果a != nil ,a = !a 
-```
+```Swift
 userDefinedColorName = "green"
 colorNameToUse = userDefinedColorName ?? defaultColorName
 // userDefinedColorName is not nil, so colorNameToUse is set to "green"
@@ -236,7 +236,7 @@ colorNameToUse = userDefinedColorName ?? defaultColorName
 ```
 如果a = nil ，a = b
 
-```
+```Swift
 let defaultColorName = "red"
 var userDefinedColorName: String?   // defaults to nil
  
@@ -249,7 +249,7 @@ var colorNameToUse = userDefinedColorName ?? defaultColorName
 ### Closed Range Operator 闭区间
 闭区间（a...b）,表示从a到b的区间范围，也包括a和b,前提条件是（a < b）,常用于数据遍历，例：
 
-```
+```Swift
 for index in 1...5 {
     print("\(index) times 5 is \(index * 5)")
 }
@@ -262,7 +262,7 @@ for index in 1...5 {
 ### Half-Open Range Operator 半开区间
 半开区间（a..<b）,表示从a到b,包括a,但不包括b,如果a == b,这就是个空区间。例：
 
-```
+```Swift
 let names = ["Anna", "Alex", "Brian", "Jack"]
 let count = names.count
 for i in 0..<count {
@@ -277,7 +277,7 @@ for i in 0..<count {
 ### One-Sided Ranges 单边区间
 闭区间和半开区间都是一个值到一个值，单边区间指从一个值到末尾或者从开头到某个值。比如：
 
-```
+```Swift
 for name in names[2...] {
     print(name)
 }
@@ -294,7 +294,7 @@ for name in names[...2] {
 当然也有半单边区间，如
 
 
-```
+```Swift
 for name in names[..<2] {
     print(name)
 }
@@ -303,7 +303,7 @@ for name in names[..<2] {
 ```
 也可以用于检测范围内是否包含某一个值，如
 
-```
+```Swift
 let range = ...5
 range.contains(7)   // false
 range.contains(4)   // true
@@ -322,7 +322,7 @@ range.contains(-1)  // true
 
 非运算符是一个前缀操作符，中间没有空格，也可以理解为“不是”。
 
-```
+```Swift
 let allowedEntry = false
 if !allowedEntry {
     print("ACCESS DENIED")
@@ -334,7 +334,7 @@ if !allowedEntry {
 
 运算符（&&）表示当两个表达式均为true的条件下才为true。（当第一个条件为false的时候，第二个条件是不会判断的）。
 
-```
+```Swift
 let enteredDoorCode = true
 let passedRetinaScan = false
 if enteredDoorCode && passedRetinaScan {
@@ -348,7 +348,7 @@ if enteredDoorCode && passedRetinaScan {
 ### Logical OR Operator 或运算符
 运算符（||）表示当两个表达式只要有一个为true的条件就为true。
 
-```
+```Swift
 let hasDoorKey = false
 let knowsOverridePassword = true
 if hasDoorKey || knowsOverridePassword {
@@ -363,7 +363,7 @@ if hasDoorKey || knowsOverridePassword {
 ### Combining Logical Operators 复合逻辑运算符
 
 如下（只要enteredDoorCode为true并且passedRetinaScan、hasDoorKey、knowsOverridePassword其中一个为true整个表达式就为true）
-```
+```Swift
 if enteredDoorCode && passedRetinaScan || hasDoorKey || knowsOverridePassword {
     print("Welcome!")
 } else {
@@ -375,7 +375,7 @@ if enteredDoorCode && passedRetinaScan || hasDoorKey || knowsOverridePassword {
 
 如下，（）里面整体表示一个单独的逻辑，使用括号有助于使逻辑更加清晰。
 
-```
+```Swift
 if (enteredDoorCode && passedRetinaScan) || hasDoorKey || knowsOverridePassword {
     print("Welcome!")
 } else {

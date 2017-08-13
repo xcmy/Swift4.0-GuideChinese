@@ -49,7 +49,7 @@ Switch语句也比其它类C的语言强大很多，具体介绍看下面。
 如下遍历数组元素
 
 
-```
+```Swift
 let names = ["Anna", "Alex", "Brian", "Jack"]
 for name in names {
     print("Hello, \(name)!")
@@ -62,7 +62,7 @@ for name in names {
 
 遍历字典的键和值，如下
 
-```
+```Swift
 let numberOfLegs = ["spider": 8, "ant": 6, "cat": 4]
 for (animalName, legCount) in numberOfLegs {
     print("\(animalName)s have \(legCount) legs")
@@ -73,7 +73,7 @@ for (animalName, legCount) in numberOfLegs {
 ```
 
 数字范围遍历
-```
+```Swift
 for index in 1...5 {
     print("\(index) times 5 is \(index * 5)")
 }
@@ -88,7 +88,7 @@ for index in 1...5 {
 如果用不到遍历的序列元素，也可以忽略，用 `_ `代替
 
 
-```
+```Swift
 let base = 3
 let power = 10
 var answer = 1
@@ -101,7 +101,7 @@ print("\(base) to the power of \(power) is \(answer)")
 
 遍历半开区间
 
-```
+```Swift
 let minutes = 60
 for tickMark in 0..<minutes {
     // render the tick mark each minute (60 times)
@@ -111,7 +111,7 @@ for tickMark in 0..<minutes {
 是时候遍历的间隔不是1，比如每五分钟为间隔，可以使用`stride(from:to:by:)`跳过
 
 
-```
+```Swift
 let minuteInterval = 5
 for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
     // render the tick mark every 5 minutes (0, 5, 10, 15 ... 45, 50, 55)
@@ -120,7 +120,7 @@ for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
 ```
 如果要两头的值都能取到，使用stride(from:through:by:)方法
 
-```
+```Swift
 let hours = 12
 let hourInterval = 3
 for tickMark in stride(from: 3, through: hours, by: hourInterval) {
@@ -142,7 +142,7 @@ for tickMark in stride(from: 3, through: hours, by: hourInterval) {
 
 `while`循环格式如下
 
-```
+```Swift
 while condition {
     statements
 }
@@ -164,7 +164,7 @@ while condition {
 
 根据游戏规则我们抽象为代码如下
 
-```
+```Swift
 let finalSquare = 25
 var board = [Int](repeating: 0, count: finalSquare + 1)
 
@@ -173,14 +173,14 @@ var board = [Int](repeating: 0, count: finalSquare + 1)
 
 根据上面左图设定游戏规则
 
-```
+```Swift
 board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
 board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
 ```
 爬梯和滑梯通过数据来模拟，另外我们模拟一个🎲数据来写一次爬梯实验，如下
 
 
-```
+```Swift
 var square = 0
 var diceRoll = 0
 while square < finalSquare {
@@ -207,7 +207,7 @@ print("Game over!")
 
 格式如下
 
-```
+```Swift
 repeat {
     statements
 } while condition
@@ -215,7 +215,7 @@ repeat {
 同样用`repeat-while`来实现爬梯子游戏，实现如下：
 
 
-```
+```Swift
 let finalSquare = 25
 var board = [Int](repeating: 0, count: finalSquare + 1)
 board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
@@ -251,7 +251,7 @@ Swift中有两种条件语句，一般说来
 
 简单的`if`语句，只有一个判断条件，当条件为真时执行里面的代码，如下：
 
-```
+```Swift
 var temperatureInFahrenheit = 30
 if temperatureInFahrenheit <= 32 {
     print("It's very cold. Consider wearing a scarf.")
@@ -261,7 +261,7 @@ if temperatureInFahrenheit <= 32 {
 
 也可以用`else`来执行当条件为假时的代码
 
-```
+```Swift
 temperatureInFahrenheit = 40
 if temperatureInFahrenheit <= 32 {
     print("It's very cold. Consider wearing a scarf.")
@@ -272,7 +272,7 @@ if temperatureInFahrenheit <= 32 {
 用`else if `也可以增加多条件判断
 
 
-```
+```Swift
 temperatureInFahrenheit = 90
 if temperatureInFahrenheit <= 32 {
     print("It's very cold. Consider wearing a scarf.")
@@ -284,7 +284,7 @@ if temperatureInFahrenheit <= 32 {
 ```
 可以根据自己需要选择是否需要else，比如也可以成这样：
 
-```
+```Swift
 temperatureInFahrenheit = 72
 if temperatureInFahrenheit <= 32 {
     print("It's very cold. Consider wearing a scarf.")
@@ -298,7 +298,7 @@ if temperatureInFahrenheit <= 32 {
 
 `Switch`语句是判断一个值出现的不同可能性，根据实际值来判断执行不同的代码块，`switch`还能对不同的可能性执行同一个代码块。一般格式如下：
 
-```
+```Swift
 switch some value to consider {
 case value 1:
     respond to value 1
@@ -313,7 +313,7 @@ default:
 如上，每种可能值都用` case` 修饰，如果要匹配多个可能值，用 ```,``` 隔开。当所有的值都不匹配的时候，可以设置`default`来执行当前的操作。
 
 
-```
+```Swift
 let someCharacter: Character = "z"
 switch someCharacter {
 case "a":
@@ -332,7 +332,7 @@ default:
 
 Switch中的每个`case下`都必须至少有一句执行代码，不然就是无效的。
 
-```
+```Swift
 let anotherCharacter: Character = "a"
 switch anotherCharacter {
 case "a": // Invalid, the case has an empty body
@@ -348,7 +348,7 @@ default:
 
 如果想要匹配多个值，可以用","隔开，如下
 
-```
+```Swift
 let anotherCharacter: Character = "a"
 switch anotherCharacter {
 case "a", "A":
@@ -364,7 +364,7 @@ default:
 
 `switch`可以匹配数字区间，如下
 
-```
+```Swift
 let approximateCount = 62
 let countedThings = "moons orbiting Saturn"
 let naturalCount: String
@@ -390,7 +390,7 @@ print("There are \(naturalCount) \(countedThings).")
 
 Switch可以匹配元组的元素是否匹配或者部分元素是否匹配。可以使用（_）来代替任意元素。如下例：
 
-```
+```Swift
 let somePoint = (1, 1)
 switch somePoint {
 case (0, 0):
@@ -413,7 +413,7 @@ default:
 > 不像C,Swift的 case值允许包含重复的范围，只要有一个case满足条件，就会结束switch语句，后面的case就会被忽略。
   
 
-```
+```Swift
 let vel = (1,1)
 switch vel {
 case (0...1,1):
@@ -434,7 +434,7 @@ default:
 
 我们可以重命名`case`匹配到的值，并作为一个临时常量或者变量在`case`的执行语句中使用，这种行为我们称为 ***value binding*** (值绑定)。如下例：
 
-```
+```Swift
 let anotherPoint = (2, 0)
 switch anotherPoint {
 case (let x, 0):
@@ -459,7 +459,7 @@ case let (x, y):
 
 Switch `case`中可以使用`where`从句增加附加条件，例如：
 
-```
+```Swift
 let yetAnotherPoint = (1, -1)
 switch yetAnotherPoint {
 case let (x, y) where x == y:
@@ -482,7 +482,7 @@ case let (x, y):
 
 如果多个`case`的执行语句是一样的，我们就可以把这些值组合在一起，用逗号隔开，支持多行。只要满足其中的任意值都会执行该`case`下语句。如下：
 
-```
+```Swift
 let someCharacter: Character = "e"
 switch someCharacter {
 case "a", "e", "i", "o", "u":
@@ -499,7 +499,7 @@ default:
 在这种复合条件下也可以使用***value bindings***（值绑定），如：
 
 
-```
+```Swift
 let stillAnotherPoint = (9, 0)
 switch stillAnotherPoint {
 case (let distance, 0), (0, let distance):
@@ -529,7 +529,7 @@ default:
 `continue`语句的作用就是提前结束当前循环，进入下一个循环（并不是跳出循环语句）。如下例：
 
 
-```
+````Swift``
 let puzzleInput = "great minds think alike"
 var puzzleOutput = ""
 let charactersToRemove: [Character] = ["a", "e", "i", "o", "u", " "]
@@ -558,7 +558,7 @@ print(puzzleOutput)
 
 因为switch的case body中必须有执行语句，所以要是想忽略这个case或者多个case，我们就可以在body中使用`break`，这样就能提前结束switch语句。如下例
 
-```
+```Swift
 let numberSymbol: Character = "三"  // Chinese symbol for the number 3
 var possibleIntegerValue: Int?
 switch numberSymbol {
@@ -588,7 +588,7 @@ if let integerValue = possibleIntegerValue {
 
 如果想让Swift中的switch case具有穿透性，可以使用`fallthrough`关键字，如下例：
 
-```
+```Swift
 let integerToDescribe = 5
 var description = "The number \(integerToDescribe) is"
 switch integerToDescribe {
@@ -605,7 +605,7 @@ print(description)
 如上switch语句如果不加`fallthrough`关键字，那么在case结束后就会直接执行`print(description)`。加了`fallthrough`后，使得case body执行完后继续执行default中body。所以`fallthrough`使得switch语句具有穿透性。
 
 
-```
+```Swift
 let integerToDescribe = 5
 var description = "The number \(integerToDescribe) is"
 switch integerToDescribe {
@@ -630,7 +630,7 @@ print(description)
  
  标签声明格式如下
  
-```
+```Swift
 label name: while condition {
     statements
 }
@@ -646,7 +646,7 @@ label name: while condition {
 这次使用while循环和switch嵌套使用，如下
 
 
-```
+```Swift
 let finalSquare = 25
 var board = [Int](repeating: 0, count: finalSquare + 1)
 board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
@@ -688,7 +688,7 @@ print("Game over!")
 
 一个`guard`语句，和if语句一样，都是根据表达式的`boolean`值来决定执行哪块代码。使用`guard`语句是为了保护`guard`语句后面执行的代码的安全性。`guard`语句一定会有`else`从句来执行条件为`false`的代码。如下
 
-```
+```Swift
 func greet(person: [String: String]) {
     guard let name = person["name"] else {
         return
@@ -720,7 +720,7 @@ greet(person: ["name": "Jane", "location": "Cupertino"])
 使用`guard`语句可以提高代码的可读性，
 举个例子，如下
 
-```
+```Swift
 func greet(person: [String: String]) {
     
     let name = person["name"]
@@ -753,7 +753,7 @@ Swift提供了检测api在当前部署环境下是否可用的方法
 
 如下格式
 
-```
+```Swift
 if #available(platform name version, ..., *) {
     statements to execute if the APIs are available
 } else {
@@ -763,7 +763,7 @@ if #available(platform name version, ..., *) {
 
 举例：
 
-```
+```Swift
 if #available(iOS 10, macOS 10.12, *) {
     // Use iOS 10 APIs on iOS, and use macOS 10.12 APIs on macOS
 } else {

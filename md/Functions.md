@@ -62,7 +62,7 @@ func greet(person: String) -> String {
 
 函数调用
 
-```
+```Swift
 print(greet(person: "Anna"))
 // Prints "Hello, Anna!"
 print(greet(person: "Brian"))
@@ -73,7 +73,7 @@ print(greet(person: "Brian"))
 
 函数是可以被多次调用的，返回结果根据输入参数的变化有关。上面的函数也可以简写为：
 
-```
+```Swift
 func greetAgain(person: String) -> String {
     return "Hello again, " + person + "!"
 }
@@ -91,7 +91,7 @@ print(greetAgain(person: "Anna"))
 
 函数的参数不是必须的，如下函数就没有输入参数。
 
-```
+```Swift
 func sayHelloWorld() -> String {
     return "hello, world"
 }
@@ -107,7 +107,7 @@ print(sayHelloWorld())
 
 函数可以有多个输入参数，写在`()`里面，用`,`号隔开，如下示例：
 
-```
+```Swift
 func greet(person: String, alreadyGreeted: Bool) -> String {
     if alreadyGreeted {
         return greetAgain(person: person)
@@ -126,7 +126,7 @@ print(greet(person: "Tim", alreadyGreeted: true))
 
 函数的返回值也不是必须的，如下示例
 
-```
+```Swift
 func greet(person: String) {
     print("Hello, \(person)!")
 }
@@ -139,7 +139,7 @@ greet(person: "Dave")
 
 函数有返回值，但是我们既可以用也可以不用，如下例
 
-```
+```Swift
 func printAndCount(string: String) -> Int {
     print(string)
     return string.count
@@ -162,7 +162,7 @@ printWithoutCounting(string: "hello, world")
 
 如下函数返回数组的最大值和最小值：
 
-```
+```Swift
 func minMax(array: [Int]) -> (min: Int, max: Int) {
     var currentMin = array[0]
     var currentMax = array[0]
@@ -178,7 +178,7 @@ func minMax(array: [Int]) -> (min: Int, max: Int) {
 ```
 函数`minMax(array:) `返回了一个包含两个Int元素的元组,我们在函数中给这两个元素设置了标签，将来可以通过这个标签来获取各个返回值。如下
 
-```
+```Swift
 let bounds = minMax(array: [8, -6, 2, 109, 3, 71])
 print("min is \(bounds.min) and max is \(bounds.max)")
 // Prints "min is -6 and max is 109"
@@ -192,7 +192,7 @@ print("min is \(bounds.min) and max is \(bounds.max)")
 
 像上面计算数组最大值和最小值的函数，如果输入的参数为空数组`[]`，就会在`var currentMin = array[0]`这儿报错。为了保证输入值的安全性，我们需要定义一个返回类型为可选的元组类型，当输入参数为空数组的时候返回`nil`。如下
 
-```
+```Swift
 func minMax(array: [Int]) -> (min: Int, max: Int)? {
     if array.isEmpty { return nil }
     var currentMin = array[0]
@@ -210,7 +210,7 @@ func minMax(array: [Int]) -> (min: Int, max: Int)? {
 
 你可以使用`if`或者`guard`去判断返回值是否为`nil`
 
-```
+```Swift
 if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
     print("min is \(bounds.min) and max is \(bounds.max)")
 }
@@ -222,7 +222,7 @@ if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
 
 函数的每个参数都有它的参数标签和参数名，参数标签在函数调用的时候使用，参数名在声明定义函数的时候使用，一般情况下，我们默认使用参数名作为参数标签。如下
 
-```
+```Swift
 //这儿的firstParameterName、secondParameterName为参数名
 func someFunction(firstParameterName: Int, secondParameterName: Int) {
     // In the function body, firstParameterName and secondParameterName
@@ -234,7 +234,7 @@ someFunction(firstParameterName: 1, secondParameterName: 2)
 ```
 每个参数的参数名必须唯一，不然报`Definition conflicts with previous value`错误。虽然不同的参数名可以有相同的参数标签，但是唯一的参数标签能够让代码更加清晰。（关于定义特定的参数标签请看下节）举个例子
 
-```
+```Swift
 func click(name name:String,name age:Int,name gender:Bool) ->() {
     print("\(name) is \(age) years old,and \(gender ? "he":"she") is a \(gender ? "boy":"girl").")
 }
@@ -251,7 +251,7 @@ click(name: "小明", name: 23, name: true)
 
 如果要给函数定义特定的参数标签，将它写在参数名前，用空格隔开，格式如下：
 
-```
+```Swift
 func someFunction(argumentLabel parameterName: Int) {
     // In the function body, parameterName refers to the argument value
     // for that parameter.
@@ -260,7 +260,7 @@ func someFunction(argumentLabel parameterName: Int) {
 
 举个例子：
 
-```
+```Swift
 func greet(person: String, from hometown: String) -> String {
     return "Hello \(person)!  Glad you could visit from \(hometown)."
 }
@@ -273,7 +273,7 @@ print(greet(person: "Bill", from: "Cupertino"))
 
 如果想让某个参数没有参数标签，可以用`_`代替参数标签。这样调用的时候就不会显示参数标签，如下：
 
-```
+```Swift
 func someFunction(_ firstParameterName: Int, secondParameterName: Int) {
     // In the function body, firstParameterName and secondParameterName
     // refer to the argument values for the first and second parameters.
@@ -287,7 +287,7 @@ someFunction(1, secondParameterName: 2)
 
 函数定义的时候我们可以给参数设置默认值，函数调用的时候我们也可以不用写这个参数，如下例：
 
-```
+```Swift
 func someFunction(parameterWithoutDefault: Int, parameterWithDefault: Int = 12) {
     // If you omit the second argument when calling this function, then
     // the value of parameterWithDefault is 12 inside the function body.
@@ -304,7 +304,7 @@ someFunction(parameterWithoutDefault: 4) // parameterWithDefault is 12
 
 在函数内我们可以通过一个可变参数指定类型的数组来获取可变参数的值，比如指定一个可变参数`numbers`，类型是`double`，那么在函数内就可以用`[Double]`类型的数组来获取参数，如下例：
 
-```
+```Swift
 func arithmeticMean(_ numbers: Double...) -> Double {
     var total: Double = 0
     for number in numbers {
@@ -330,7 +330,7 @@ arithmeticMean(3, 8.25, 18.75)
 
 输出参数在函数调用的时候必须传入一个变量，因为常量或者字面量都是不能修改的，所以需要在输入参数前加一个`&`来区别这个参数在函数内是可被修改的(函数调用的时候会自动加)。如下例通过输出参数的函数修改了函数外的变量的值：
 
-```
+```Swift
 func swapTwoInts(_ a: inout Int, _ b: inout Int) {
     let temporaryA = a
     a = b
@@ -353,7 +353,7 @@ print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 
 每个函数都有它的类型，一般函数类型指的是他的输入参数类型和返回类型，举个例子：
 
-```
+```Swift
 func addTwoInts(_ a: Int, _ b: Int) -> Int {
     return a + b
 }
@@ -365,7 +365,7 @@ func multiplyTwoInts(_ a: Int, _ b: Int) -> Int {
 如上，两个函数的内容不一样的，但是他们的类型都是一样的，都是` (Int, Int) -> Int`类型。
 另一个例子：
 
-```
+```Swift
 func printHelloWorld() {
     print("hello, world")
 }
@@ -376,7 +376,7 @@ func printHelloWorld() {
 
 这个函数类型我们可以当做和其他的类型一样使用，我们可以定义一个常量或者变量的类型为函数类型，如下
 
-```
+```Swift
 func addTwoInts(_ a: Int, _ b: Int) -> Int {
     return a + b
 }
@@ -387,12 +387,12 @@ var mathFunction: (Int, Int) -> Int = addTwoInts
 如上，如果不写`mathFunction`的类型就会默认和函数addTwoInts的一致，如果要写，就必须和函数addTwoInts的函数类型一致（`(Int, Int) -> Int`）类型,使用和addTwoInts一样
 
 
-```
+```Swift
 print("Result: \(mathFunction(2, 3))")
 // Prints "Result: 5"
 ```
 因为我们定义的`mathFunction`是一个变量，所以如下：
-```
+```Swift
 func multiplyTwoInts(_ a: Int, _ b: Int) -> Int {
     return a * b
 }
@@ -406,7 +406,7 @@ print("Result: \(mathFunction(2, 3))")
 
 上面提到函数类型可以和其他的类型一样使用，所以也可以用函数类型作为另一个函数的参数类型，如下
 
-```
+```Swift
 func addTwoInts(_ a: Int, _ b: Int) -> Int {
     return a + b
 }
@@ -425,7 +425,7 @@ printMathResult(addTwoInts, 3, 5)
 函数类型也可以作为另一个函数的返回值来使用，将函数类型写在`->`的后面，如下例子
 
 
-```
+```Swift
 func stepForward(_ input: Int) -> Int {
     return input + 1
 }
@@ -469,7 +469,7 @@ print("zero!")
 嵌套函数只能在他的父级函数内部使用，或者作为返回值在函数外部使用，如下我们把上面的例子用嵌套函数来写：
 
 
-```
+```Swift
 func chooseStepFunction(backward: Bool) -> (Int) -> Int {
     func stepForward(input: Int) -> Int { return input + 1 }
     func stepBackward(input: Int) -> Int { return input - 1 }

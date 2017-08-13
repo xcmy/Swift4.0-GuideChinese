@@ -26,7 +26,7 @@
 
 - [ControlFlow-控制流](./md/ControlFlow.md)
 
-- [Functions](./md/Functions.md)
+- [Functions-函数](./md/Functions.md)
 
 - 未完待续
 
