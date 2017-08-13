@@ -26,9 +26,10 @@
 
 - [ControlFlow-控制流](./md/ControlFlow.md)
 
+- [Functions](./md/Functions.md)
+
 - 未完待续
 
-- [Functions](./md/Functions.md)
 
 - [Closures](./md/Closures.md)
 
