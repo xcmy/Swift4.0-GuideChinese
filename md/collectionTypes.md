@@ -620,7 +620,7 @@ for airportName in airports.values {
 
 如果你想把字典里的键或者值封装成一个数组，则
 
-````Swift``
+````Swift
 let airportCodes = [String](airports.keys)
 // airportCodes is ["YYZ", "LHR"]
  

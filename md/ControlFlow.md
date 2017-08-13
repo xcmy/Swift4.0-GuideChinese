@@ -529,7 +529,7 @@ default:
 `continue`语句的作用就是提前结束当前循环，进入下一个循环（并不是跳出循环语句）。如下例：
 
 
-````Swift``
+```Swift
 let puzzleInput = "great minds think alike"
 var puzzleOutput = ""
 let charactersToRemove: [Character] = ["a", "e", "i", "o", "u", " "]
