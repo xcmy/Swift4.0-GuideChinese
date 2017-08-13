@@ -42,7 +42,7 @@ Swift的func语法很灵活，既能实现像C风格的没有参数名称的简�
 
 一个函数基本格式如下，关键字`func`加函数名，后括号内定义函数参数名和参数类型，在`->`后面设置函数返回类型，在`{}`内写函数执行语句，若定义有返回类型，则必须返回值。
 
-```
+```Swift
 func func_name(parameter_name:parameter_type,parameter_name:parameter_type...) -> return_type {
 
     statument
@@ -53,7 +53,7 @@ func func_name(parameter_name:parameter_type,parameter_name:parameter_type...) -
 如下例函数`greet(person:)`,定义了一个`String`类型的参数`person`和一个`String`类型的返回值`greeting`.
 
 
-```
+```swift
 func greet(person: String) -> String {
     let greeting = "Hello, " + person + "!"
     return greeting
