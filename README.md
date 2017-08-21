@@ -31,9 +31,11 @@
 
 - [Closures](./md/Closures.md)
 
+- [Enumerations](./md/Enumerations.md)
+
+
 - 未完待续
 
-- [Enumerations](./md/Enumerations.md)
 
 - [Classes and Structures
 ](./md/ClassesAndStructures.md)
