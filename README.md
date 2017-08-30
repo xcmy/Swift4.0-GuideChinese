@@ -27,18 +27,19 @@
 - [ControlFlow-控制流](./md/ControlFlow.md)
 
 
-- [Functions](./md/Functions.md)
+- [Functions-函数](./md/Functions.md)
 
-- [Closures](./md/Closures.md)
+- [Closures-闭包](./md/Closures.md)
 
-- [Enumerations](./md/Enumerations.md)
+- [Enumerations-枚举](./md/Enumerations.md)
 
-- [Classes and Structures
+- [Classes and Structures-类和结构体
 ](./md/ClassesAndStructures.md)
 
-- 未完待续
 
-- [Properties](./md/Properties.md)
+- [Properties-属性](./md/Properties.md)
+
+- 未完待续
 
 - [Methods](./md/Methods.md)
 
