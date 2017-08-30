@@ -214,14 +214,15 @@ let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
 Swift的String和Character类型完全符合[Unicode](https://baike.baidu.com/item/Unicode/750500?fr=aladdin)编码规范和标准
 
 
+![image](./img/s1.jpeg)
+
+
 ```
 
 graph TD
 A[Unicode scalar]---B[String]
 
 ```
-
-Unicode-scalar  ---String
 
 
 ```
