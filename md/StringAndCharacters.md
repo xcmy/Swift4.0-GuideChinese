@@ -214,25 +214,11 @@ let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
 Swift的String和Character类型完全符合[Unicode](https://baike.baidu.com/item/Unicode/750500?fr=aladdin)编码规范和标准
 
 
-![image](./img/s1.jpeg)
+![image](https://github.com/xcmy/Swift4.0-GuideChinese/blob/master/img/s1.jpeg?raw=true)
+
+![image](https://github.com/xcmy/Swift4.0-GuideChinese/blob/master/img/s2.jpg?raw=true)
 
 
-```
-
-graph TD
-A[Unicode scalar]---B[String]
-
-```
-
-
-```
-graph TD
-A[Unicode scalar 编码单元]---|一个或多个组成|B[Extended Grapheme Clusters 扩展字形群集]
-B---|相当于|C[Character 字符]
-A---|部分 Unicode scalar 对应 |C
-C---|组成|D[String 字符串]
-
-```
 
 ### Unicode Scalars 编码方式
  Swift 的String 类型是基于 Unicode Scalar创建的。一个编码单元由21位数字或者修饰符组成，就像`U+0061`代表拉丁字母`A ("a")`，`U+1F425`代表表情"🐥"。
