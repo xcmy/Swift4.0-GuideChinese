@@ -221,6 +221,7 @@ A[Unicode scalar]---B[String]
 
 ```
 
+Unicode-scalar  ---String
 
 
 ```
