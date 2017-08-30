@@ -217,7 +217,7 @@ Swift的String和Character类型完全符合[Unicode](https://baike.baidu.com/it
 ```
 
 graph TD
-A[Unicode scalar]-->B[String]
+A[Unicode scalar]---B[String]
 
 ```
 
@@ -225,10 +225,10 @@ A[Unicode scalar]-->B[String]
 
 ```
 graph TD
-A[Unicode scalar 编码单元]-->|一个或多个组成|B[Extended Grapheme Clusters 扩展字形群集]
-B-->|相当于|C[Character 字符]
-A-->|部分 Unicode scalar 对应 |C
-C-->|组成|D[String 字符串]
+A[Unicode scalar 编码单元]---|一个或多个组成|B[Extended Grapheme Clusters 扩展字形群集]
+B---|相当于|C[Character 字符]
+A---|部分 Unicode scalar 对应 |C
+C---|组成|D[String 字符串]
 
 ```
 
