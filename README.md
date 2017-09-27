@@ -39,13 +39,15 @@
 - [Properties-属性](./md/Properties.md)
 
 
-- [Methods](./md/Methods.md)
+- [Methods-方法](./md/Methods.md)
 
-- [Subscripts](./md/Subscripts.md)
+- [Subscripts-下标](./md/Subscripts.md)
 
+- [Inheritance-继承](./md/Inheritance.md)
+- 
 - 未完待续
 
-- [Inheritance](./md/Inheritance.md)
+
 
 - [Initialization](./md/Initialization.md)
 
